@@ -1,4 +1,7 @@
 angular.module('hello', [])
-  .controller('home', function($scope) {
-    $scope.greeting = {id: '899511', content: 'Hello World!'}
+  .controller('home', function($http) {
+	  var self = this;
+	  $http.get('/resource/').then(function(response) {
+	    self.greeting = response.data;
+	  })
 })
