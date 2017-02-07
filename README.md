@@ -1,4 +1,4 @@
-# Spring-security
+# Spring and AngularJS-security
 Spring-security Spring/Angular based project
 
-BASE PROJECT
+LOGIN PROJECT
