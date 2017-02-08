@@ -14,17 +14,17 @@ angular.module('hello', [ 'ngRoute' ])
     $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 
   })
-  
+
  .controller('home', function($http) {
     var self = this;
-    $http.get('/resource/').then(function(response) {
+    $http.get('http://localhost:9000/').then(function(response) {
       self.greeting = response.data;
     })
   })
 
 .controller('navigation', function($rootScope, $http, $location) {
   var self = this
-  
+
   var authenticate = function(credentials, callback) {
     var headers = credentials ? {authorization : "Basic "
         + btoa(credentials.username + ":" + credentials.password)
@@ -63,5 +63,5 @@ angular.module('hello', [ 'ngRoute' ])
 	    $location.path("/");
 	  });
 	}
-  
+
 });
